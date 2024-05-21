@@ -6,7 +6,8 @@ ruby "3.1.2"
 gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+gem "sprockets-rails", "~> 3.4"
+gem "sprockets", "~> 4.0"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -24,12 +25,20 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
 gem "devise"
 gem "sass-rails"
+gem "webpacker"
+gem "turbolinks"
+gem "jbuilder"
+gem "redis"
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'bootstrap'
+gem 'image_processing'
+gem 'mini_magick'
+gem 'autoprefixer-rails'
+
+
 
 
 
@@ -50,7 +59,6 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
