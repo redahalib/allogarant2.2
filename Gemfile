@@ -31,7 +31,7 @@ gem "webpacker"
 gem "turbolinks"
 gem "jbuilder"
 gem "redis"
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '~> 6.0'
 gem 'simple_form'
 gem 'bootstrap'
 gem 'image_processing'
