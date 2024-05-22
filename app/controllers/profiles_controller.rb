@@ -15,12 +15,16 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    @passport = Passport.new
+    @certificat = Certificat.new
+    @passport.user = @user
+    @passport.photos = params[:user][:passport]
     @user = User.find(params[:id])
     if @user == current_user
       if @user.update(user_params)
-        redirect_to profile_path(@user)
+        redirect_to edit_profile_path(@user), notice: 'Documents enregistrés avec success'
       else
-        render 'edit'
+        render :edit
       end
     else
       redirect_to root_path
@@ -30,6 +34,6 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone, :need, :budget, :city, :passport, :certificat, :step)
+    params.require(:user).permit(:first_name, :last_name, :phone, :need, :budget, :city, :passport, :certificat, :step, :photos)
   end
 end

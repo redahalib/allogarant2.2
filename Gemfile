@@ -37,6 +37,7 @@ gem 'bootstrap'
 gem 'image_processing'
 gem 'mini_magick'
 gem 'autoprefixer-rails'
+gem 'cloudinary'
 
 
 
@@ -63,6 +64,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem "dotenv-rails"
 end
 
 group :development do
