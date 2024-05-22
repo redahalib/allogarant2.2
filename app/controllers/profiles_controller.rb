@@ -1,41 +1,35 @@
 class ProfilesController < ApplicationController
-  def index
-    @profiles = Profile.all
+  before_action :authenticate_user!
+
+  def show
+    @user = User.find(params[:id])
   end
 
-  def new
-    @profile = Profile.new
-    @user_id = params["user_id"].present? ? params["user_id"] : current_user.id
-		@user = User.find(@user_id)
-
-  def create
-    @profile = Profile.new(profile_params)
-    @user_id = profile_params["user_id"].present? ? profile_params["user_id"] : current_user.id
-    @profile.update(user_id: @user_id)
-
-    if @profile.save
-      redirect_to profiles_path
+  def edit
+    @user = User.find(params[:id])
+    if @user == current_user
+      render 'edit'
     else
-      render 'new'
+      redirect_to root_path
     end
   end
 
   def update
-    @profile = Profile.find(params[:id])
-
-    if @profile.update(profile_params)
-      flash[:alert] = "Modifications enregistrées avec success"
-      redirect_to profiles_path
+    @user = User.find(params[:id])
+    if @user == current_user
+      if @user.update(user_params)
+        redirect_to profile_path(@user)
+      else
+        render 'edit'
+      end
     else
-      flash[:alert] = "Erreur"
-     end
+      redirect_to root_path
+    end
   end
 
   private
 
-  def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :phone, :passport, :city, :need, :certificat, :budget)
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :phone, :need, :budget, :city, :passport, :certificat, :step)
   end
-
-
 end

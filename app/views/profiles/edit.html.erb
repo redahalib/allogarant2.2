@@ -1,0 +1,84 @@
+<div id="about" class="about-section about-style-6 mb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="signup-content-wrapper">
+          <div class="image text-center">
+            <%= image_tag("signup/ecrire.svg", width: "80%", style:"padding-top: 50px;") %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <%= simple_form_for(@user, url: profile_path(@user), method: :patch) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <div class="form-inputs">
+            <h3>Vos Informations</h3>
+            <div class="col-12" style="display: flex; padding: 0px;">
+              <div class="col-4" style="padding-left: 0px;">
+                <%= f.input :phone,
+                  prompt: 'Choisir ..',
+                  label: "Indicatif",
+                  collection: ["+ 212", "+ 33", "+ 216", "+ 213", "Autre"],
+                  as: :select %>
+              </div>
+              <div class="col-8" style="padding-right: 0px;">
+                <%= f.input :phone, label: "N° de téléphone" %>
+              </div>
+            </div>
+            <%= f.input :need,
+              prompt: 'Choisir ..',
+              label: "Besoin du client",
+              collection: ["Garantie Locative", "Résidence Etudiante", "Chasse d'Apparts"],
+              as: :select %>
+            <%= f.input :city, label: "Ville d'installation" %>
+            <%= f.input :budget, label: 'Budget mensuel alloué à la location' %>
+            <div style="font-size: 13px;">
+              En cliquant sur « Suivant », vous acceptez l’utilisation des cookies dans les conditions prévues par notre politique de protection des <a href="https://www.allogarant.com/politique_de_confidentialite">données personnelles</a>.
+            </div>
+            <br>
+            <% if params["user_id"].present? %>
+              <%= f.input :user_id, as: :hidden, input_html: { value: params["user_id"] } %>
+            <% end %>
+          </div>
+          <div class="form-actions">
+            <%= link_to 'Retour', root_path, class: "btn btn-secondary", style: "padding: 8px 24px; border-radius: 50px; transition: opacity 0.3s ease;" %>
+            <%= f.button :submit, "Valider", class: "btn btn-primary radius-10", style: "padding: 8px 24px; border-radius: 50px; transition: opacity 0.3s ease; background-color: #222B34;" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about" class="about-section about-style-6 mb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="signup-content-wrapper">
+          <div class="image text-center">
+            <%= image_tag("signup/download.svg", width: "80%", style: "padding-top: 50px;") %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <%= simple_form_for @user, url: profile_path, method: :patch do |f| %>
+          <div class="form-inputs">
+            <h3>Vos documents</h3>
+            <br>
+            <%= f.label :passport, "Votre Passeport" %><br>
+            <%= f.file_field :passport, multiple: true %>
+            <br><br>
+            <%= f.label :certificat, "Votre certificat d'inscription" %><br>
+            <%= f.file_field :certificat, multiple: true %>
+          </div>
+          <br>
+          <div class="form-actions">
+            <%= link_to 'Retour', root_path, class: "btn btn-secondary", style: "padding: 8px 24px; border-radius: 50px; transition: opacity 0.3s ease;" %>
+            <%= f.button :submit, "Valider", class: "btn btn-primary radius-10", style: "padding: 8px 24px; border-radius: 50px; transition: opacity 0.3s ease; background-color: #222B34;" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

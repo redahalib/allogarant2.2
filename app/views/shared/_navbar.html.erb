@@ -13,7 +13,7 @@
               <ul class="navbar-nav">
                 <% if current_user %>
                   <li class="nav-item">
-                    <%= link_to "Profile", profiles_path, class: "page-scroll" %>
+                    <%= link_to "Profile", edit_profile_path(current_user), class: "page-scroll" %>
                   </li>
                 <% end %>
                 <li class="nav-item">
