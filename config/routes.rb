@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :profiles
   resources :admindashboards
+  get "about", to: 'pages#about'
+  get "faq", to: 'pages#faq'
+  get "mentions_legales", to: 'pages#mentions_legales'
+  get "conditions_generales", to: 'pages#conditions_generales'
+  get "politique_de_confidentialite", to: 'pages#politique_de_confidentialite'
+
 
   # Defines the root path route ("/")
   # root "posts#index"
