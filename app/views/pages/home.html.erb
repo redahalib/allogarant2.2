@@ -1,1 +1,254 @@
-this is the dashboard/homepage
+    <!-- ========================= hero-1 start ========================= -->
+      <div class="hero-section hero-style-1" style="background-color: white;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="hero-content-wrapper">
+                <p style= "font-size: 36px; line-height: normal; color: #323550;"> <strong>La garantie de louer en toute tranquilité</strong></p>
+                <p style= "font-size: 20px; line-height: normal; text-align: justify; color: #323550;">On facilite l'accès au logement à tous les étudiants qui s'installent en France.</p>
+                	<%= link_to "Trouver un logement", new_user_registration_path, class: "radius-30 home-btn", style: "text-decoration: none;" %>
+              </div>
+            </div>
+            <div class="col-lg-6 align-self-end">
+              <div class="hero-image">
+                <%= image_tag("search.svg", width: "100%") %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================= hero-1 end ========================= -->
+    <!-- ========================= hero-section-wrapper-1 start ========================= -->
+    <!-- ========================= hero-section-wrapper-6 end ========================= -->
+     <!-- ========================= feature style-6 start ========================= -->
+      <div class="feature-section feature-style-6" id="feature" style="background-color: #F3F3F3;">
+      	<div class="container" >
+        <div class="row justify-content-center">
+          <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-8">
+            <div class="section-title text-center mb-30">
+              <h4 class="mb-15"><b>Comment ça marche ?</b></h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="single-feature" style="height:400px; text-align: center;">
+              <div class="image" style="height:150px;">
+                <%= image_tag("signup/sign_up.svg", width: "100%") %>
+              </div>
+              <div class="content text-justify" style="padding-top: 5px;">
+                <br><br>
+                <h6>Je m'inscris en quelques clics et renseigne mes critères de recherche.</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-feature" style="height:400px; text-align: center;">
+              <div class="image" style="height:150px;">
+                <%= image_tag("signup/build.svg", width: "100%") %>
+              </div>
+              <div class="content text-justify" style="padding-top: 5px;">
+                <br><br>
+                <h6>Je reçois quelques offres et fais mon choix.</h6>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-feature" style="height:400px; text-align: center;">
+              <div class="image" style="height:150px;">
+                <%= image_tag("signup/check.svg", width: "100%") %>
+              </div>
+              <div class="content text-justify" style="padding-top: 5px;">
+                <br><br>
+                <h6>Je signe mon contrat de bail et procède au paiement des frais.</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		<!-- ========================= feature style-6 end ========================= -->
+
+   	<!-- ========================= about style-6 start ========================= -->
+    <div id="about" class="about-section about-style-6" style="background-color: white;">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="about-image">
+              <%= image_tag("signup/search_home.svg", width: "100%") %>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-content-wrapper">
+              <div class="section-title mb-30">
+                <h4 class="mb-25" style="color: #3F3D56;"> <b>Pourquoi faire appel à Allo Garant ?</b></h4>
+                <h6 class="text-justify">Allo Garant amplifie vos chances de louer partout en France et vous permet d'entamer en toute sérénité votre nouvelle vie :</h6>
+                <br>
+                <h6><i class="fas fa-check" style="color: #3A95BA;"></i> Possibilité de louer à distance</h6>
+                <h6><i class="fas fa-check" style="color: #3A95BA;"></i> Plus besoin de garant auprès des résidences partenaires</h6>
+                <h6><i class="fas fa-check" style="color: #3A95BA;"></i> Dossier prioritaire chez nos partenaires</h6>
+                <h6><i class="fas fa-check" style="color: #3A95BA;"></i> Aucune somme bloquée en banque</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- ========================= pricing style-2 start ========================= -->
+    <div class="pricing-section pricing-style-2">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
+            <div class="section-title text-center mb-30">
+              <h4><b>Combien ça coûte?</b></h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-8 col-sm-10" style="text-align: justify;">
+            <div class="single-pricing active" style="height:500px;">
+              <div class="image">
+                <%= image_tag("signup/securite.svg", width: "100%") %>
+              </div>
+              <h5><strong>Garantie Locative</strong></h5><br>
+              <h6 style="height:80px;">Etude et montage du dossier puis accompagnement jusqu'à la signature du bail</h6>
+              <h3 style="height:50px;">300 € <span style="font-size: 14px; color:#3F3D56;">+ 4.5% du loyer CC </span></h3>
+              <%= link_to "Je suis intéressé", new_user_registration_path, class: "radius-30 pricing-btn", style: "text-decoration: none;" %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8 col-sm-10" style="text-align: justify;">
+            <div class="single-pricing active" style="height:500px;">
+              <div class="image">
+                <%= image_tag("signup/location.svg", width: "100%") %>
+              </div>
+              <h5><strong>Résidence Etudiante</strong></h5><br>
+              <h6 style="height:80px;">Signature du bail sous 48h sous réserve de disponibilité</h6>
+              <h3 style="height:50px;">650 €</h3>
+               <%= link_to "Trouver un logement", new_user_registration_path, class: "radius-30 pricing-btn", style: "text-decoration: none;" %>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8 col-sm-10" style="text-align: justify;">
+            <div class="single-pricing active" style="height:500px;">
+              <div class="image">
+                <%= image_tag("signup/choosing.svg", width: "100%") %>
+              </div>
+              <h5><strong>Chasse d'Apparts</strong></h5><br>
+              <h6 style="height:80px;">Une équipe dédiée à l'écoute de vos critères</h6>
+              <h3 style="height:50px;">Sur devis</h3>
+               <%= link_to "Je suis intéressé", new_user_registration_path, class: "radius-30 pricing-btn", style: "text-decoration: none;" %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- ========================= pricing style-2 end ========================= -->
+    <!-- ========================= about style-6 end ========================= -->
+
+    <div class="feature-section feature-style-6" id="feature" style="background-color: white;">
+      <div class="container" >
+        <div class="row justify-content-center">
+          <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-8">
+            <div class="section-title text-center mb-30">
+              <h4 class="mb-15"><b>Ils nous soutiennent</b></h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-6 col-md-4"><%= image_tag("signup/add.png", width: "75%") %></div>
+          <div class="col-6 col-md-4"><%= image_tag("signup/ccg.png", width: "75%") %></div>
+          <div class="col-6 col-md-4"><%= image_tag("signup/h7.png", width: "75%") %></div>
+          <div class="col-6 col-md-4"><%= image_tag("signup/bf.png", width: "75%") %></div>
+          <div class="col-6 col-md-4"><%= image_tag("signup/iil.png", width: "75%") %></div>
+          <div class="col-6 col-md-4"><%= image_tag("signup/ft.png", width: "75%") %></div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- ========================= testimonial style-1 start ========================= -->
+    <div class="testimonial-section testimonial-style-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title text-center mb-30">
+              <h4><b>Ils en parlent mieux que nous</b></h4>
+              <br>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-4 col-md-6">
+            <div class="single-testimonial">
+              <div class="content-wrapper">
+                <div class="content text-justify">
+                  <p>Grâce à Allo Garant, j'ai réussi à trouver mon studio à distance en étant encore au Maroc. J'ai pu passer un mois de plus au Maroc avec ce soucis en moins.
+                  Merci bcp les gars, vous gérez grave 😍</p>
+                  <div class="quote">
+                    <i class="lni lni-quotation"></i>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="image">
+                    <%= image_tag("signup/kenza.png", width: "100%") %>
+                  </div>
+                  <div class="text">
+                    <h5>Kenza S.</h5>
+                    <p>Etudiante à la Sorbonne</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6">
+            <div class="single-testimonial">
+              <div class="content-wrapper">
+                <div class="content text-justify">
+                  <p>Je stressais tellement au bout de la septième visite que j'en voyais plus le bout. Un grand merci aux équipes de Allo Garant pour m'avoir soutenue et accompagnée jusqu'à la signature du bail ❤️</p>
+                  <div class="quote">
+                    <i class="lni lni-quotation"></i>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="image">
+                    <%= image_tag("signup/dina.png", width: "100%") %>
+                  </div>
+                  <div class="text">
+                    <h5>Dina B.</h5>
+                    <p>Etudiante à Dauphine</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4 col-md-6">
+            <div class="single-testimonial">
+              <div class="content-wrapper">
+                <div class="content text-justify">
+                  <p>Premier job décroché, premier appartement trouvé ! Site facile d’utilisation. Sans Allo Garant je n’aurais jamais pu trouver un logement sans bloquer un an de loyer en banque. Je recommande 👍</p>
+                  <div class="quote">
+                    <i class="lni lni-quotation"></i>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="image">
+                    <%= image_tag("signup/mehdi.png", width: "100%") %>
+                  </div>
+                  <div class="text">
+                    <h5>Mehdi J.</h5>
+                    <p>Manager chez Deloitte</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========================= testimonial style-1 end ========================= -->
+
+
+    <!-- ========================= team style-6 end ========================= -->

@@ -15,10 +15,14 @@ class ProfilesController < ApplicationController
   end
 
   def update
+
     @passport = Passport.new
     @certificat = Certificat.new
     @passport.user = @user
     @passport.photos = params[:user][:passport]
+    @certificat.user = @user
+    @certificat.photos = params[:user][:certificat]
+
     @user = User.find(params[:id])
     if @user == current_user
       if @user.update(user_params)
@@ -34,6 +38,6 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone, :need, :budget, :city, :passport, :certificat, :step, :photos)
+    params.require(:user).permit(:first_name, :last_name, :phone, :need, :budget, :city, :step, photos: [])
   end
 end

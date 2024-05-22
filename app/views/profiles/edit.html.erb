@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="col-lg-6">
-        <%= simple_form_for @user, url: profile_path, method: :patch do |f| %>
+        <%= simple_form_for @user, url: profile_path, method: :patch, html: { multipart: true } do |f| %>
           <div class="form-inputs">
             <h3>Vos documents</h3>
             <br>
