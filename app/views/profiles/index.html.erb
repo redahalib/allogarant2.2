@@ -1,1 +1,34 @@
 This is the user profile/infos
+
+<div id="about" class="about-section about-style-6 mb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="signup-content-wrapper">
+          <div class="image text-center">
+            <%= image_tag("signup/download.svg", width: "80%", style:"padding-top: 50px;") %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+			<%= simple_form_for @profile, url: admindashboards_path do |f| %>
+			  <div class="form-inputs">
+		  		<h3>Vos documents</h3>
+			  		<br>
+			  		 	<%= f.label :passport, "Votre Passeport" %> <br>
+				   		<%= f.file_field :passport, multiple: true %>
+			  		<br>
+			  		<br>
+			  		<%= f.label :certificat, "Votre certificat d'inscription" %> <br>
+				   		<%= f.file_field :certificat, multiple: true %>
+			  </div>
+			  <br>
+			  <div class="form-actions">
+			    <%= link_to 'Retour', admindashboards_path(@profile), class: "btn btn-secondary", style: "padding: 8px 24px; border-radius: 50px; transition: opacity 0.3s ease;"%>
+			    <%= f.button :submit, "Valider", class: "btn btn-primary radius-10", style: "padding: 8px 24px; border-radius: 50px; transition: opacity 0.3s ease; background-color: #222B34;" %>
+			  </div>
+			<% end %>
+		 </div>
+    </div>
+  </div>
+</div>
