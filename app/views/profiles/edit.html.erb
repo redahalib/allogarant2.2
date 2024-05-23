@@ -14,6 +14,12 @@
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form-inputs">
             <h3>Vos Informations</h3>
+              <div class="col-4" style="padding-left: 0px;">
+                <%= f.input :first_name, label: "Prénom" %>
+              </div>
+              <div class="col-4" style="padding-left: 0px;">
+                <%= f.input :last_name, label: "Nom" %>
+              </div>
             <div class="col-12" style="display: flex; padding: 0px;">
               <div class="col-4" style="padding-left: 0px;">
                 <%= f.input :phone,

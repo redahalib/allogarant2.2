@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :passports, dependent: :destroy
   has_many :certificats, dependent: :destroy
 
+  validates :first_name, :last_name, :phone, :need, :budget, :city, presence: true
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
