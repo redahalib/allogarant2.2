@@ -24,6 +24,8 @@
             <th scope="col">Besoin</th>
             <th scope="col">Ville</th>
             <th scope="col">Budget</th>
+            <th scope="col">Indicatif</th>
+            <th scope="col">Téléphone</th>
             <th scope="col">Step</th>
             <th scope="col"></th>
           </tr>
@@ -37,6 +39,8 @@
               <td><%= user.need %></td>
               <td><%= user.city %></td>
               <td><%= user.budget %></td>
+              <td><%= user.indicatif %></td>
+              <td><%= user.phone %></td>
               <td>
                 <select class="form-control step-select" data-user-id="<%= user.id %>">
                   <option value="not interesed" <%= 'selected' if user.step == 'not intersted' %>>Not interested</option>
