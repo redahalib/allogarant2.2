@@ -64,7 +64,7 @@ class AdminController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone, :need, :budget, :city, :step, photos: [])
+    params.require(:user).permit(:first_name, :last_name, :phone, :need, :budget, :city, :indicatif, :step, photos: [])
   end
 
   def authorize_admin

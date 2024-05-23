@@ -1,0 +1,95 @@
+<!-- ========================= contact style-4 start ========================= -->
+		<section id="contact" class="contact-section contact-style-4">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
+            <div class="section-title text-center mb-50">
+              <h3 class="mb-15">Contact</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="single-item" style="height:100px;">
+              <div class="icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="text">
+                <p>+212 6 61 33 47 64</p>
+                <p>+33 6 09 27 86 36</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-item" style="height:100px;">
+              <div class="icon">
+                <i class="far fa-envelope"></i>
+              </div>
+              <div class="text">
+                <p>contact@allogarant.com</p>
+                <p>fahd@allogarant.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-item" style="height:100px;">
+              <div class="icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="text">
+                <p>Espace porte d'Anfa, Immeuble C, 3ème étage Bureau n°10 - Casablanca</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="contact-form-wrapper">
+              <%= simple_form_for @contact do |f| %>
+                <%= f.error_notification %>
+                <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                <div class="row">
+                <div class="col-md-6">
+                    <div class="single-input">
+                      <%= f.input :full_name, placeholder:'Nom et Prenom', label: false %>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="single-input">
+                      <%= f.input :email, placeholder:'Email', label: false %>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="single-input">
+                     <%= f.input :phone, placeholder: 'Téléphone', label: false %>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="single-input">
+                      <%= f.input :subject, placeholder: 'Sujet', label: false %>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="single-input">
+                      <%= f.input :message, placeholder: 'Message', label: false, :input_html => {:style => 'width: 100%', :rows => 6} %>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-button">
+                      <%= f.button :submit, "Envoyer", class: "button" %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-lg-4 align-self-center">
+            <div class="contact-image">
+              <%= image_tag("signup/contact.svg", width: "100%") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================= contact style-4 end ========================= -->
