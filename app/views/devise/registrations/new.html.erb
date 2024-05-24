@@ -1,29 +1,53 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div id="about" class="about-section about-style-6 mb-80" style= 'margin-bottom: 116px;'>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="signup-content-wrapper">
+          <div class="section-title text-center">
+            <h3 class="mb-20">C'est parti !</h3>
+          </div>
+          <div class="image text-center">
+            <%= image_tag("signup/sur_ordi.svg", width: "80%", style:"padding-top: 0px;") %>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
+          <div class="signup-form-wrapper form-inputs">
+              <div class="single-input">
+                <%= f.input :first_name,
+                        required: true,
+                        label: 'Prénom',
+                        input_html: { autocomplete: "Prénom" }%>
+              </div>
+              <div class="single-input form-inputs">
+                <%= f.input :last_name,
+                        required: true,
+                        label: 'Nom de Famille',
+                        input_html: { autocomplete: "Nom de Famille" }%>
+              </div>
+              <div class="single-input form-inputs">
+                <%= f.input :email,
+                      required: true,
+                      input_html: { autocomplete: "Email" }%>
+              </div>
+              <div class="single-input form-inputs">
+                <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+              </div>
+              <% if params["partenaire"].present? %>
+                <%= f.input :partenaire, :as => :hidden, :input_html => { :value => params["partenaire"] } %>
+              <% end %>
+              <div class="signup-button mb-25">
+                <%= link_to 'Retour', root_path, class: "btn btn-secondary", style: "padding: 8px 24px; border-radius: 50px; transition: opacity 0.3s ease;"%>
+                <%= f.button :submit, "Continuer", class: "btn btn-primary radius-10", style: "padding: 8px 24px; border-radius: 50px; transition: opacity 0.3s ease; background-color: #222B34;" %>
+              </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
