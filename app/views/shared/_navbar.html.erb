@@ -1,3 +1,7 @@
+<thead>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</thead>
+
 <section class="hero-section-wrapper-1" style="background-color: #F3F3F3;">
   <!-- ========================= header-4 start ========================= -->
   <div class="header header-4" style="position: sticky; background-color: white;">
@@ -5,8 +9,8 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-12 navbar navbar-expand-lg navbar-light" style="padding: 0; display: flex; justify-content: space-between; align-items: center;">
-            <a class="navbar-brand" href="<%= root_path %>">
-              <%= image_tag 'logo/logo.png', alt: 'Brand Logo' %>
+            <a class="navbar-brand" href="<%= root_path %>" style="max-height: 40px;">
+              <%= image_tag 'logo/logo.png', alt: 'Brand Logo', style: 'max-height: 40px;' %>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
