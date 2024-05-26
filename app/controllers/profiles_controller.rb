@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
     if @user == current_user
       if @user.update(user_params)
         save_documents
-        redirect_to edit_profile_path(@user), notice: 'Documents enregistrés avec success'
+        redirect_to edit_profile_path(@user), notice: 'Documents enregistrés avec succès.'
       else
         render :edit
       end

@@ -10,7 +10,11 @@
               <div class="hero-content-wrapper">
                 <p style= "font-size: 36px; line-height: normal; color: #323550;"> <strong>La garantie de louer en toute tranquilité</strong></p>
                 <p style= "font-size: 20px; line-height: normal; text-align: justify; color: #323550;">On facilite l'accès au logement à tous les étudiants qui s'installent en France.</p>
-                	<%= link_to "Trouver un logement", new_user_registration_path, class: "radius-30 home-btn", style: "text-decoration: none;" %>
+                	<% if current_user %>
+                  <%= link_to "Trouver un logement", edit_profile_path(current_user), class: "radius-30 home-btn", style: "text-decoration: none;" %>
+                <% else %>
+                  <%= link_to "Trouver un logement", new_user_registration_path, class: "radius-30 home-btn", style: "text-decoration: none;" %>
+                <% end %>
               </div>
             </div>
             <div class="col-lg-6 align-self-end">
@@ -119,8 +123,11 @@
               <h5><strong>Garantie Locative</strong></h5><br>
               <h6 style="height:80px;">Etude et montage du dossier puis accompagnement jusqu'à la signature du bail</h6>
               <h3 style="height:50px;">300 € <span style="font-size: 14px; color:#3F3D56;">+ 4.5% du loyer CC </span></h3>
-              <%= link_to "Je suis intéressé", new_user_registration_path, class: "radius-30 pricing-btn", style: "text-decoration: none;" %>
-            </div>
+                <% if current_user %>
+                  <%= link_to "Trouver un logement", edit_profile_path(current_user), class: "radius-30 home-btn", style: "text-decoration: none;" %>
+                <% else %>
+                  <%= link_to "Trouver un logement", new_user_registration_path, class: "radius-30 home-btn", style: "text-decoration: none;" %>
+                <% end %>            </div>
           </div>
           <div class="col-lg-4 col-md-8 col-sm-10" style="text-align: justify;">
             <div class="single-pricing active" style="height:500px;">
@@ -130,8 +137,11 @@
               <h5><strong>Résidence Etudiante</strong></h5><br>
               <h6 style="height:80px;">Signature du bail sous 48h sous réserve de disponibilité</h6>
               <h3 style="height:50px;">650 €</h3>
-               <%= link_to "Trouver un logement", new_user_registration_path, class: "radius-30 pricing-btn", style: "text-decoration: none;" %>
-            </div>
+                <% if current_user %>
+                  <%= link_to "Trouver un logement", edit_profile_path(current_user), class: "radius-30 home-btn", style: "text-decoration: none;" %>
+                <% else %>
+                  <%= link_to "Trouver un logement", new_user_registration_path, class: "radius-30 home-btn", style: "text-decoration: none;" %>
+                <% end %>            </div>
           </div>
           <div class="col-lg-4 col-md-8 col-sm-10" style="text-align: justify;">
             <div class="single-pricing active" style="height:500px;">
@@ -141,8 +151,11 @@
               <h5><strong>Chasse d'Apparts</strong></h5><br>
               <h6 style="height:80px;">Une équipe dédiée à l'écoute de vos critères</h6>
               <h3 style="height:50px;">Sur devis</h3>
-               <%= link_to "Je suis intéressé", new_user_registration_path, class: "radius-30 pricing-btn", style: "text-decoration: none;" %>
-            </div>
+                <% if current_user %>
+                  <%= link_to "Trouver un logement", edit_profile_path(current_user), class: "radius-30 home-btn", style: "text-decoration: none;" %>
+                <% else %>
+                  <%= link_to "Trouver un logement", new_user_registration_path, class: "radius-30 home-btn", style: "text-decoration: none;" %>
+                <% end %>            </div>
           </div>
         </div>
 
