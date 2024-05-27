@@ -22,7 +22,7 @@
 @import "components/signup";
 @import "pages/index";
 
-p.notice {
+p.notice, p.alert {
   margin-left: 300px;
   font-weight: bolder;
   color: rgba(179, 42, 42, 0.564);
