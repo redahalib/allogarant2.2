@@ -64,7 +64,7 @@
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const searchInput = document.getElementById('search-input');
@@ -78,16 +78,19 @@
           const clientCell = row.getElementsByTagName('td')[1];
           const needCell = row.getElementsByTagName('td')[3];
           const cityCell = row.getElementsByTagName('td')[4];
+          const stepCell = row.getElementsByTagName('td')[8].getElementsByTagName('select')[0];
 
-          if (clientCell && needCell && cityCell) {
+          if (clientCell && needCell && cityCell && stepCell) {
             const clientText = clientCell.textContent || clientCell.innerText;
             const needText = needCell.textContent || needCell.innerText;
             const cityText = cityCell.textContent || cityCell.innerText;
+            const stepText = stepCell.options[stepCell.selectedIndex].text;
 
             if (
               clientText.toLowerCase().includes(searchTerm) ||
               needText.toLowerCase().includes(searchTerm) ||
-              cityText.toLowerCase().includes(searchTerm)
+              cityText.toLowerCase().includes(searchTerm) ||
+              stepText.toLowerCase().includes(searchTerm)
             ) {
               row.style.display = '';
             } else {
