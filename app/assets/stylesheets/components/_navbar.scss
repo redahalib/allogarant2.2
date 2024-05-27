@@ -11,7 +11,7 @@
   width: 40px;
 }
 
-/* ============================= 
+/* =============================
     HEADER-1 CSS
 ================================ */
 
@@ -25,7 +25,7 @@
             border-radius: 5px;
             position: relative;
             @include transition(0.3s);
-            
+
             @media #{$md} {
                 padding: 17px 0;
             }
@@ -33,22 +33,22 @@
                 padding: 17px 0;
             }
         }
-        
+
         .navbar-brand {
             padding: 0;
             img{
                 max-width: 180px;
             }
         }
-        
+
         .navbar-toggler {
             padding: 0;
-        
+
             &:focus {
                 outline: none;
                 @include box-shadow(none);
             }
-        
+
             & .toggler-icon {
                 width: 30px;
                 height: 2px;
@@ -58,18 +58,18 @@
                 position: relative;
                 @include transition(0.3s);
             }
-        
+
             &.active {
                 & .toggler-icon {
                     &:nth-of-type(1) {
                         @include transform(rotate(45deg));
                         top: 7px;
                     }
-        
+
                     &:nth-of-type(2) {
                         opacity: 0;
                     }
-        
+
                     &:nth-of-type(3) {
                         @include transform(rotate(135deg));
                         top: -7px;
@@ -77,8 +77,8 @@
                 }
             }
         }
-        
-        
+
+
         .navbar-collapse {
             @media #{$md} {
                 position: absolute;
@@ -90,7 +90,7 @@
                 @include box-shadow (0px 15px 20px 0px rgba(0, 0, 0, 0.1));
                 padding: 5px 12px;
             }
-        
+
             @media #{$xs} {
                 position: absolute;
                 top: 100%;
@@ -102,12 +102,12 @@
                 padding: 5px 12px;
             }
         }
-        
-        
+
+
         .navbar-nav {
             & .nav-item {
                 position: relative;
-        
+
                 & a {
                     font-size: 16px;
                     font-weight: 500;
@@ -118,45 +118,45 @@
                     display: inline-block;
                     z-index: 1;
                     border-bottom: 2px solid transparent;
-        
+
                     @media #{$md} {
                         display: inline-block;
                         padding: 6px 25px;
                         color: $heading-color;
                     }
-        
+
                     @media #{$xs} {
                         display: inline-block;
                         padding: 6px 25px;
                         color: $heading-color;
                     }
-        
+
                     &:hover,
                     &.active {
                         background: rgba($primary-color, .2);
                         color: $primary-color;
                         border-color: $primary-color;
                     }
-        
-                        
+
+
                 }
-        
+
                 &:hover {
                     & .sub-menu {
                         top: 100%;
                         opacity: 1;
                         visibility: visible;
-        
+
                         @media #{$md} {
                             top: 0;
                         }
-        
+
                         @media #{$xs} {
                             top: 0;
                         }
                     }
                 }
-        
+
                 & .sub-menu {
                     width: 200px;
                     background-color: $white;
@@ -167,7 +167,7 @@
                     opacity: 0;
                     visibility: hidden;
                     @include transition(0.3s);
-        
+
                     @media #{$md} {
                         position: relative;
                         width: 100%;
@@ -176,7 +176,7 @@
                         opacity: 1;
                         visibility: visible;
                     }
-        
+
                     @media #{$xs} {
                         position: relative;
                         width: 100%;
@@ -185,15 +185,15 @@
                         opacity: 1;
                         visibility: visible;
                     }
-        
+
                     & li {
                         display: block;
-        
+
                         & a {
                             display: block;
                             padding: 8px 20px;
                             color: $black;
-        
+
                             &.active,
                             &:hover {
                                 padding-left: 25px;
@@ -203,10 +203,10 @@
                     }
                 }
             }
-        
+
             & .sub-nav-toggler {
                 display: none;
-        
+
                 @media #{$md} {
                     display: block;
                     position: absolute;
@@ -219,7 +219,7 @@
                     width: 30px;
                     height: 30px;
                 }
-        
+
                 @media #{$xs} {
                     display: block;
                     position: absolute;
@@ -232,7 +232,7 @@
                     width: 30px;
                     height: 30px;
                 }
-        
+
                 & span {
                     width: 8px;
                     height: 8px;
@@ -246,5 +246,3 @@
         }
     }
 }
-
-
