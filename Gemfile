@@ -38,7 +38,7 @@ gem 'image_processing'
 gem 'mini_magick'
 gem 'autoprefixer-rails'
 gem 'cloudinary'
-
+gem 'actiontext', require: false
 
 
 
