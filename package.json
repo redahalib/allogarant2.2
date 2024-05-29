@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "dependencies": {
     "@babel/core": "^7.24.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.21.4-esm.4",
     "@babel/plugin-transform-object-rest-spread": "^7.24.6",
     "@rails/webpacker": "^6.0.0-rc.6",
     "webpack": "^5.53.0",
@@ -16,7 +17,9 @@
     "plugins": [
       "@babel/plugin-transform-runtime",
       "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread"
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-proposal-private-methods",
+      "@babel/plugin-proposal-private-property-in-object"
     ]
   },
   "devDependencies": {
