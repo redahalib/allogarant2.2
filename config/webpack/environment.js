@@ -19,7 +19,10 @@ environment.plugins.append('BabelLoader', {
     loader: 'babel-loader',
     options: {
       presets: ['@babel/preset-env'],
-      plugins: ['@babel/plugin-transform-object-rest-spread']
+      plugins: ['@babel/plugin-transform-object-rest-spread',
+      '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-proposal-private-methods',
+      ]
     }
   }
 });
