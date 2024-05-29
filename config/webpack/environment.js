@@ -12,6 +12,18 @@ environment.config.set('node', {
   global: true
 });
 
+environment.plugins.append('BabelLoader', {
+  test: /\.js$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'babel-loader',
+    options: {
+      presets: ['@babel/preset-env'],
+      plugins: ['@babel/plugin-transform-object-rest-spread']
+    }
+  }
+});
+
 environment.plugins.append(
   'Provide',
   new webpack.ProvidePlugin({
