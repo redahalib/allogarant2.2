@@ -10,10 +10,16 @@
   "babel": {
     "presets": [
       "./node_modules/@rails/webpacker/package/babel/preset.js"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-object-rest-spread"
     ]
   },
   "devDependencies": {
     "@webpack-cli/serve": "^2.0.5",
+    "babel-plugin-macros": "^3.1.0",
     "webpack-dev-server": "^5.0.4"
   }
 }
