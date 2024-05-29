@@ -6,6 +6,7 @@
     "@babel/core": "^7.24.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.20.2",
     "@babel/plugin-transform-object-rest-spread": "^7.24.6",
+    "@hotwired/turbo-rails": "^8.0.4",
     "@rails/webpacker": "^6.0.0-rc.6",
     "bootstrap": "^5.3.3",
     "turbolinks": "^5.2.0",
