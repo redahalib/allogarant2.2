@@ -38,5 +38,9 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initUpdateNavbarOnScroll();
-  fbFunction();
+
+  // Check if fbFunction exists before calling it
+  if (typeof fbFunction === 'function') {
+    fbFunction();
+  }
 });
