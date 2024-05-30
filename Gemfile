@@ -39,6 +39,7 @@ gem 'mini_magick'
 gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'actiontext', require: false
+gem 'rails-ujs'
 
 
 
