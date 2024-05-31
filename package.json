@@ -11,11 +11,10 @@
     "@popperjs/core": "^2.11.8",
     "@rails/activestorage": "^7.0.8-3",
     "@rails/ujs": "^7.0.8-3",
-    "@rails/webpacker": "^6.0.0-rc.6",
     "bootstrap": "^5.3.3",
     "turbolinks": "^5.2.0",
-    "webpack": "^5.53.0",
-    "webpack-cli": "^4.8.0"
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   },
   "babel": {
     "presets": [
@@ -34,6 +33,9 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@webpack-cli/serve": "^2.0.5",
     "babel-plugin-macros": "^3.1.0",
-    "webpack-dev-server": "^5.0.4"
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "build": "webpack --config ./config/webpack/webpack.config.js"
   }
 }

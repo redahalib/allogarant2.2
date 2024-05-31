@@ -27,7 +27,6 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "devise"
 gem "sass-rails"
-gem "webpacker", '~> 6.0.0.rc.6'
 gem "turbolinks"
 gem "jbuilder"
 gem "redis"
@@ -40,6 +39,9 @@ gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem 'actiontext', require: false
 gem 'rails-ujs'
+gem 'jquery-turbolinks'
+gem 'jsbundling-rails'
+
 
 
 

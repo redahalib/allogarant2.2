@@ -5,7 +5,12 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".", 
+    "typeRoots": ["node_modules/@types", "types"],
+    "paths": {
+      "*": ["types/*"]
+    }
   },
   "include": [
     "src",
