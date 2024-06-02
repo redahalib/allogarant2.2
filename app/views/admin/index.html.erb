@@ -3,6 +3,18 @@
 <head>
   <title>Admin Dashboard</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .table th, .table td {
+      width: 7vw; /* ajustement général des colonnes */
+    }
+    
+    .table .fixed-width {
+      width: 8vw;  /* largeur fixe pour nom, prénom, et email */
+      max-width: 8vw;  /* empêche la colonne de s'élargir */
+      word-wrap: break-word;  /* assure la césure des mots si nécessaire */
+    }
+  </style>
+
 </head>
 <body>
   <div class="container">
@@ -34,15 +46,15 @@
           <% @users.each do |user| %>
             <tr data-user-id="<%= user.id %>">
               <td><%= user.created_at.strftime("%d/%m/%Y") %></td>
-              <td><%= "#{user.first_name} #{user.last_name}" %></td>
-              <td><%= user.email %></td>
+              <td class="fixed-width"><%= "#{user.first_name} #{user.last_name}" %></td>
+              <td class="fixed-width"><%= user.email %></td>
               <td><%= user.need %></td>
               <td><%= user.city %></td>
               <td><%= user.budget %></td>
               <td><%= user.indicatif %></td>
               <td><%= user.phone %></td>
               <td>
-                <select class="form-control step-select" data-user-id="<%= user.id %>">
+                <select class="form-control step-select fixed-width" data-user-id="<%= user.id %>">
                   <option value="not interested" <%= 'selected' if user.step == 'not interested' %>>Not interested</option>
                   <option value="to call" <%= 'selected' if user.step == 'to call' %>>To call</option>
                   <option value="to call back" <%= 'selected' if user.step == 'to call back' %>>To call back</option>
