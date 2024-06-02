@@ -55,6 +55,7 @@
               <td><%= user.phone %></td>
               <td>
                 <select class="form-control step-select fixed-width" data-user-id="<%= user.id %>">
+                  <option value="new lead" <%= 'selected' if user.step == 'new lead' %>>new lead</option>
                   <option value="not interested" <%= 'selected' if user.step == 'not interested' %>>Not interested</option>
                   <option value="to call" <%= 'selected' if user.step == 'to call' %>>To call</option>
                   <option value="to call back" <%= 'selected' if user.step == 'to call back' %>>To call back</option>
