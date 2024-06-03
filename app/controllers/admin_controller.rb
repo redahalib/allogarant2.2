@@ -15,7 +15,7 @@ class AdminController < ApplicationController
     if request.post? && params[:user]
       modify_steps
     else
-      @users = User.where(deleted: false).order(created_at: :desc)
+      @users = User.where(deleted: false, admin: nil).order(created_at: :desc)
     end
   end
   
