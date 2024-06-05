@@ -55,14 +55,14 @@
               <td><%= user.phone %></td>
               <td>
                 <select class="form-control step-select fixed-width" data-user-id="<%= user.id %>">
-                  <option value="new lead" <%= 'selected' if user.step == 'new lead' %>>new lead</option>
-                  <option value="not interested" <%= 'selected' if user.step == 'not interested' %>>Not interested</option>
-                  <option value="to call" <%= 'selected' if user.step == 'to call' %>>To call</option>
-                  <option value="to call back" <%= 'selected' if user.step == 'to call back' %>>To call back</option>
-                  <option value="no response" <%= 'selected' if user.step == 'no response' %>>No response</option>
-                  <option value="done deal" <%= 'selected' if user.step == 'done deal' %>>Done deal</option>
-                  <option value="hesitate" <%= 'selected' if user.step == 'hesitate' %>>Hesitate</option>
-                  <option value="already found" <%= 'selected' if user.step == 'already found' %>>Already found</option>
+                  <option value="new lead" <%= 'selected' if user.step == 'new lead' %>>NOUVEAU</option>
+                  <option value="no response" <%= 'selected' if user.step == 'no response' %>>Ne répond pas</option>
+                  <option value="not interested" <%= 'selected' if user.step == 'not interested' %>>Pas intéressé</option>
+                  <option value="to call back" <%= 'selected' if user.step == 'to call back' %>>Contacté, à rappeler</option>
+                  <option value="to call" <%= 'selected' if user.step == 'to call' %>>Contacté, attend propale</option>
+                  <option value="hesitate" <%= 'selected' if user.step == 'hesitate' %>>Propale faite</option>
+                  <option value="done deal" <%= 'selected' if user.step == 'done deal' %>>DONE DEAL</option>
+                  <option value="already found" <%= 'selected' if user.step == 'already found' %>>Déjà trouvé</option>
                 </select>
               </td>
               <td>
