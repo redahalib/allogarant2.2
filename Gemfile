@@ -41,11 +41,7 @@ gem 'actiontext', require: false
 gem 'rails-ujs'
 gem 'jquery-turbolinks'
 gem 'jsbundling-rails'
-
-
-
-
-
+gem 'kaminari'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"

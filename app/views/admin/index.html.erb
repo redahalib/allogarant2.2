@@ -7,7 +7,7 @@
     .table th, .table td {
       width: 7vw; /* ajustement général des colonnes */
     }
-    
+
     .table .fixed-width {
       width: 8vw;  /* largeur fixe pour nom, prénom, et email */
       max-width: 8vw;  /* empêche la colonne de s'élargir */
@@ -72,6 +72,9 @@
           <% end %>
         </tbody>
       </table>
+    </div>
+        <div class="d-flex justify-content-center">
+      <%= paginate @users %>
     </div>
   </div>
 

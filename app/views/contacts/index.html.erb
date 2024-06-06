@@ -16,7 +16,7 @@
           <th>Action</th>
         </tr>
       <tbody>
-        <% @contacts.reverse.each do |contact| %>
+        <% @contacts.each do |contact| %>
           <tr>
             <td><%= contact.full_name %></td>
             <td><%= contact.email %></td>
@@ -31,5 +31,8 @@
         <% end %>
       </tbody>
     </table>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= paginate @contacts %>
   </div>
 </div>

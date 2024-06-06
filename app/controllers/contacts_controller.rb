@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = Contact.all
+    @contacts = Contact.order(created_at: :desc).page(params[:page]).per(10)
     render :index
   end
 
