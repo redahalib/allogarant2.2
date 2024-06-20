@@ -13,6 +13,22 @@
       max-width: 8vw;  /* empêche la colonne de s'élargir */
       word-wrap: break-word;  /* assure la césure des mots si nécessaire */
     }
+
+    .table .comments-width {
+    width: 20vw;  /* largeur fixe pour la colonne de commentaires */
+    max-width: 20vw;  /* empêche la colonne de s'élargir */
+  }
+
+   .table .delete-width {
+    width: 5vw;  /* largeur fixe pour la colonne de suppression */
+    max-width: 5vw;  /* empêche la colonne de s'élargir */
+  }
+
+    .table .steps-width {
+    width: 10vw;  /* largeur fixe pour la colonne de commentaires */
+    max-width: 10vw;  /* empêche la colonne de s'élargir */
+  }
+
   </style>
 
 </head>
@@ -38,8 +54,9 @@
             <th scope="col">Budget</th>
             <th scope="col">Indicatif</th>
             <th scope="col">Téléphone</th>
-            <th scope="col">Step</th>
-            <th scope="col">Action</th>
+            <th scope="col" class="steps-width">Step</th>
+            <th scope="col" class="comments-width">Commentaires</th>
+            <th scope="col" class="delete-width"></th>
           </tr>
         </thead>
         <tbody id="users-table-body">
@@ -53,7 +70,7 @@
               <td><%= user.budget %></td>
               <td><%= user.indicatif %></td>
               <td><%= user.phone %></td>
-              <td>
+              <td class="steps-width">
                 <select class="form-control step-select fixed-width" data-user-id="<%= user.id %>">
                   <option value="new lead" <%= 'selected' if user.step == 'new lead' %>>NOUVEAU</option>
                   <option value="no response" <%= 'selected' if user.step == 'no response' %>>Ne répond pas</option>
@@ -65,8 +82,11 @@
                   <option value="already found" <%= 'selected' if user.step == 'already found' %>>Déjà trouvé</option>
                 </select>
               </td>
-              <td>
-                <button class="btn btn-danger delete-btn" data-user-id="<%= user.id %>">Delete</button>
+              <td class="comments-width">
+                <textarea class="form-control comments-textarea" data-user-id="<%= user.id %>"><%= user.comments %></textarea>
+              </td>
+              <td class="delete-width">
+                <button class="btn btn-danger delete-btn" data-user-id="<%= user.id %>">X</button>
               </td>
             </tr>
           <% end %>
@@ -76,8 +96,8 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"async></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"async></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" async></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" async></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const searchInput = document.getElementById('search-input');
@@ -136,6 +156,33 @@
             },
             error: function(response) {
               console.error('Error updating step');
+            }
+          });
+        });
+      });
+
+      // Comments textarea change event
+      const commentsTextareas = document.querySelectorAll('.comments-textarea');
+      commentsTextareas.forEach(function(textarea) {
+        textarea.addEventListener('change', function() {
+          const userId = textarea.getAttribute('data-user-id');
+          const comments = textarea.value;
+
+          $.ajax({
+            url: '/admin',
+            type: 'POST',
+            data: {
+              user: {
+                id: userId,
+                comments: comments
+              },
+              authenticity_token: '<%= form_authenticity_token %>'
+            },
+            success: function(response) {
+              console.log('Comments updated successfully');
+            },
+            error: function(response) {
+              console.error('Error updating comments');
             }
           });
         });

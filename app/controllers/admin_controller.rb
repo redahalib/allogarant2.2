@@ -4,12 +4,18 @@ class AdminController < ApplicationController
 
   def modify_steps
     @user = User.find(params[:user][:id])
-    if @user.update(step: params[:user][:step])
+    if @user.update(step: params[:user][:step], comments: params[:user][:comments])
       render json: { status: 'success' }
     else
       render json: { status: 'error' }, status: :unprocessable_entity
     end
   end
+
+  def users_with_comments
+    users = User.select(:id, :comments)
+    render json: users
+  end
+
 
   def index
     if request.post? && params[:user]
@@ -64,7 +70,7 @@ class AdminController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :phone, :need, :budget, :city, :indicatif, :step, photos: [])
+    params.require(:user).permit(:first_name, :last_name, :phone, :need, :budget, :city, :indicatif, :comments, :step, photos: [])
   end
 
   def authorize_admin
